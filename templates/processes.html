@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}CyberGuard Pro - Processes{% endblock %}
+
+{% block content %}
+<section id="processes">
+    <h2>Running Processes</h2>
+    <div class="table-container">
+        <table id="processes-table">
+            <thead>
+                <tr>
+                    <th>PID</th>
+                    <th>Name</th>
+                    <th>User</th>
+                    <th>CPU %</th>
+                    <th>Memory %</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- This will be populated by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/processes.js') }}"></script>
+{% endblock %}
