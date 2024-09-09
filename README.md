@@ -20,14 +20,14 @@ pip install -r requirements.txt
 
 ## Usage
 
-1. Configure your server connections in `config.yml`.
+1. Configure your server connections at centralized dashboard.
 2. Run the dashboard:
 
 ```bash
-python main.py
+python app.py
 ```
 
-3. Access the web interface at `http://localhost:8080`.
+3. Access the web interface at `http://localhost:5000`.
 
 ## Configuration
 
@@ -35,23 +35,17 @@ Edit `config.yml` to add your server details:
 
 ```yaml
 servers:
-  - name: Production Server
+  - name: mysql Server
     host: 192.168.1.100
-    port: 22
+    port: 3306
     username: admin
-  - name: Development Server
-    host: 192.168.1.101
-    port: 22
-    username: devuser
 ```
 
 ## Dependencies
 
 - Python 3.8+
 - Flask
-- Paramiko
 - psutil
-- PyYAML
 
 ## Contributing
 
@@ -63,4 +57,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-For support, please open an issue on the GitHub repository or contact the maintainer at support@example.com.
+For support, contact  at Twitter @alpha_sec79.
