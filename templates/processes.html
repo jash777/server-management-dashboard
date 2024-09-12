@@ -5,6 +5,13 @@
 {% block content %}
 <section id="processes">
     <h2>Running Processes</h2>
+    <div class="agent-selector">
+        <label for="agent-select">Select Agent:</label>
+        <select id="agent-select">
+            <option value="">Select an agent</option>
+            <!-- This will be populated by JavaScript -->
+        </select>
+    </div>
     <div class="table-container">
         <table id="processes-table">
             <thead>

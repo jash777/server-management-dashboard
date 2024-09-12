@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const addAgentBtn = document.getElementById('add-agent-btn');
     const addAgentModal = document.getElementById('add-agent-modal');
     const addAgentForm = document.getElementById('add-agent-form');
+    const selectedAgentName = document.getElementById('selected-agent-name');
 
     addAgentBtn.addEventListener('click', () => {
         addAgentModal.style.display = 'block';
@@ -20,6 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
             addAgentModal.style.display = 'none';
         }
     };
+
+    // Fetch and display the currently selected agent
+    fetchSelectedAgent();
 });
 
 function addAgent(name, ipAddress) {
@@ -68,5 +72,38 @@ function checkAgentStatus(agentId) {
     .catch((error) => {
         console.error('Error:', error);
         alert('Error checking agent status');
+    });
+}
+
+function selectAgent(agentId) {
+    fetch(`/select_agent/${agentId}`)
+    .then(response => {
+        if (response.ok) {
+            alert('Agent selected successfully');
+            fetchSelectedAgent();
+        } else {
+            throw new Error('Failed to select agent');
+        }
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        alert('Error selecting agent');
+    });
+}
+
+function fetchSelectedAgent() {
+    fetch('/api/selected_agent')
+    .then(response => response.json())
+    .then(data => {
+        const selectedAgentName = document.getElementById('selected-agent-name');
+        if (data.selected_agent) {
+            selectedAgentName.textContent = data.selected_agent.name;
+        } else {
+            selectedAgentName.textContent = 'None';
+        }
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        selectedAgentName.textContent = 'Error fetching selected agent';
     });
 }

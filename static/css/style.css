@@ -198,3 +198,104 @@ input, select {
     color: var(--text-color);
     border-radius: 5px;
 }
+
+/* static/css/style.css */
+/* ... (existing styles remain unchanged) ... */
+
+/* Agent Selector Styles */
+.agent-selector {
+    background-color: var(--secondary-color);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 168, 255, 0.1);
+}
+
+.agent-selector label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.agent-selector select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.agent-selector select:focus {
+    outline: none;
+    border-color: var(--highlight-color);
+    box-shadow: 0 0 0 2px rgba(46, 204, 113, 0.2);
+}
+
+.agent-selector select option {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+/* Adjustments for the processes section */
+#processes {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 168, 255, 0.1);
+}
+
+#processes h2 {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+#processes-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#processes-table th,
+#processes-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#processes-table th {
+    background-color: rgba(255, 255, 255, 0.05);
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+#processes-table tr:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .agent-selector {
+        padding: 10px;
+    }
+
+    #processes-table {
+        font-size: 0.9em;
+    }
+
+    #processes-table th,
+    #processes-table td {
+        padding: 8px;
+    }
+}
+
+.alert-message {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--warning-color);
+    color: var(--bg-color);
+    border-radius: 5px;
+    font-weight: bold;
+}

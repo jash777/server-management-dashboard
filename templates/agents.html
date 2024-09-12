@@ -27,6 +27,7 @@
                     <td>
                         <button class="btn btn-small btn-danger" onclick="removeAgent({{ agent.id }})">Remove</button>
                         <button class="btn btn-small" onclick="checkAgentStatus({{ agent.id }})">Check Status</button>
+                        <button class="btn btn-small btn-primary" onclick="selectAgent({{ agent.id }})">Select</button>
                     </td>
                 </tr>
                 {% endfor %}
@@ -44,6 +45,10 @@
             <button type="submit" class="btn">Add Agent</button>
         </form>
     </div>
+</div>
+
+<div id="selected-agent-info">
+    <p>Selected Agent: <span id="selected-agent-name">None</span></p>
 </div>
 {% endblock %}
 
