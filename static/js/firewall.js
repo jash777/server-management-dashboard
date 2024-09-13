@@ -1,5 +1,3 @@
-// static/js/firewall.js
-
 document.addEventListener('DOMContentLoaded', function() {
     loadFirewallRules();
     

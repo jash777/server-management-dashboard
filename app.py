@@ -6,14 +6,12 @@ import os
 from datetime import datetime
 import requests
 
-# Configure logging
 logging.basicConfig(filename='app.log', level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]')
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)  # Set a secret key for session management
+app.secret_key = os.urandom(24)  
 
-# MySQL Configuration
 db_config = {
     'host': '192.168.1.28',
     'user': 'dev',
@@ -22,9 +20,8 @@ db_config = {
 }
 
 API_KEY = os.environ.get('API_KEY', 'alpha')
-AGENT_PORT = 5000  # Default port for the agent
+AGENT_PORT = 5000  
 
-# Database connection function
 def create_db_connection():
     try:
         connection = mysql.connector.connect(**db_config)
@@ -33,7 +30,6 @@ def create_db_connection():
         app.logger.error(f"Error connecting to MySQL: {e}")
         return None
 
-# Helper function for API requests
 def make_api_request(endpoint, method='GET', data=None):
     if 'selected_agent' not in session:
         app.logger.warning("API request attempted without a selected agent")

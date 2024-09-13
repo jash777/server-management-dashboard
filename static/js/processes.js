@@ -1,5 +1,3 @@
-// static/js/processes.js
-
 document.addEventListener('DOMContentLoaded', function() {
     const agentSelect = document.getElementById('agent-select');
     const processesTable = document.getElementById('processes-table').getElementsByTagName('tbody')[0];

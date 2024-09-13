@@ -1,4 +1,3 @@
-// static/js/agents.js
 document.addEventListener('DOMContentLoaded', function() {
     const addAgentBtn = document.getElementById('add-agent-btn');
     const addAgentModal = document.getElementById('add-agent-modal');
@@ -22,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Fetch and display the currently selected agent
     fetchSelectedAgent();
 });
 
