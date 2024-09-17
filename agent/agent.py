@@ -8,7 +8,6 @@ import json
 import os
 import json
 
-
 app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins="*")
 

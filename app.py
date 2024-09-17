@@ -14,9 +14,11 @@ app.secret_key = os.urandom(24)
 
 db_config = {
     'host': '192.168.1.28',
-    'user': 'dev',
-    'password': 'olivia#777',
-    'database': 'alpha'
+    'user': 'alpha',
+    'password': 'alpha#777',
+    'database': 'alpha',
+    'auth_plugin': 'mysql_native_password'  # Specify the authentication plugin
+
 }
 
 API_KEY = os.environ.get('API_KEY', 'alpha')

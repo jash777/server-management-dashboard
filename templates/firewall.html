@@ -5,6 +5,12 @@
 {% block content %}
 <section id="firewall">
     <h2>Firewall Rules (iptables)</h2>
+    <div class="agent-selector">
+        <label for="agent-select">Select Agent:</label>
+        <select id="agent-select">
+            <option value="">Select an agent</option>
+        </select>
+    </div>
     <button id="add-rule-btn" class="btn">Add New Rule</button>
     <div class="table-container">
         <table id="firewall-table">
@@ -60,7 +66,10 @@
 {% endblock %}
 
 {% block extra_js %}
+<script src="{{ url_for('static', filename='js/processes.js') }}"></script>
+
 <script>
+    
 document.addEventListener('DOMContentLoaded', function() {
     loadFirewallRules();
     

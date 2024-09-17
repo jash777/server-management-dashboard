@@ -155,6 +155,7 @@ def get_iptables_rules():
         logger.error(f"Unexpected error in get_iptables_rules: {e}")
         return {'error': f'Unexpected error occurred: {e}'}
 
+
 @lru_cache(maxsize=None)
 def get_running_processes():
     try:

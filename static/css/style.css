@@ -18,9 +18,10 @@ body {
 }
 
 .container {
-    max-width: 1400px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 20px;
+    position: flex;
 }
 
 header {
@@ -72,6 +73,9 @@ nav ul li a:hover, nav ul li a.active {
     color: var(--bg-color);
 }
 
+nav ul li p {
+    padding-left: 68rem;
+}
 section {
     background-color: var(--secondary-color);
     padding: 20px;
@@ -292,4 +296,9 @@ input, select {
     border-radius: 5px;
     font-weight: bold;
 }
+}
+
+.navtitle p {
+    margin-left: 67rem;
+    position: relative;
 }

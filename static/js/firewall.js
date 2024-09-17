@@ -20,6 +20,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 });
+function fetchAgents() {
+    fetch('/api/agents')
+        .then(response => response.json())
+        .then(agents => {
+            agentSelect.innerHTML = '<option value="">Select an agent</option>';
+            agents.forEach(agent => {
+                const option = document.createElement('option');
+                option.value = agent.id;
+                option.textContent = `${agent.name} (${agent.ip_address})`;
+                agentSelect.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error fetching agents:', error));
+}
 
 function loadFirewallRules() {
     fetch('/api/firewall_rules')
